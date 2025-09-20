@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #0f172a; /* slate-900 */
+    --color-foreground: #f8fafc; /* slate-50 */
+    --color-border: rgba(148, 163, 184, 0.2); /* slate-400 with opacity */
+    --color-input: #1e293b; /* slate-800 */
+    --color-ring: #00f0ff; /* electric cyan */
+    
+    /* Card Colors */
+    --color-card: #1e293b; /* slate-800 */
+    --color-card-foreground: #f8fafc; /* slate-50 */
+    
+    /* Popover Colors */
+    --color-popover: #1e293b; /* slate-800 */
+    --color-popover-foreground: #f8fafc; /* slate-50 */
+    
+    /* Muted Colors */
+    --color-muted: #334155; /* slate-700 */
+    --color-muted-foreground: #94a3b8; /* slate-400 */
+    
+    /* Primary Colors */
+    --color-primary: #00f0ff; /* electric cyan */
+    --color-primary-foreground: #0f172a; /* slate-900 */
+    
+    /* Secondary Colors */
+    --color-secondary: #1e293b; /* slate-800 */
+    --color-secondary-foreground: #f8fafc; /* slate-50 */
+    
+    /* Destructive Colors */
+    --color-destructive: #dc2626; /* red-600 */
+    --color-destructive-foreground: #f8fafc; /* slate-50 */
+    
+    /* Accent Colors */
+    --color-accent: #facc15; /* yellow-400 */
+    --color-accent-foreground: #0f172a; /* slate-900 */
+    
+    /* Success Colors */
+    --color-success: #22c55e; /* green-500 */
+    --color-success-foreground: #0f172a; /* slate-900 */
+    
+    /* Warning Colors */
+    --color-warning: #ff4d4d; /* red-500 */
+    --color-warning-foreground: #f8fafc; /* slate-50 */
+    
+    /* Error Colors */
+    --color-error: #dc2626; /* red-600 */
+    --color-error-foreground: #f8fafc; /* slate-50 */
+    
+    /* Surface Color */
+    --color-surface: #1e293b; /* slate-800 */
+    
+    /* Text Colors */
+    --color-text-primary: #f8fafc; /* slate-50 */
+    --color-text-secondary: #94a3b8; /* slate-400 */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Cybersecurity-specific animations */
+  @keyframes pulse-data {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes glow-cyan {
+    0%, 100% { box-shadow: 0 0 4px rgba(0, 240, 255, 0.3); }
+    50% { box-shadow: 0 0 8px rgba(0, 240, 255, 0.6); }
+  }
+
+  @keyframes skeleton-loading {
+    0% { background-position: -200px 0; }
+    100% { background-position: calc(200px + 100%) 0; }
+  }
+
+  .animate-pulse-data {
+    animation: pulse-data 2s ease-in-out infinite;
+  }
+
+  .animate-glow-cyan {
+    animation: glow-cyan 2s ease-in-out infinite;
+  }
+
+  .animate-skeleton {
+    background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.1), transparent);
+    background-size: 200px 100%;
+    animation: skeleton-loading 1.5s infinite;
+  }
+
+  /* Micro-interaction styles */
+  .btn-press {
+    transition: transform 150ms ease-out;
+  }
+
+  .btn-press:active {
+    transform: scale(0.98);
+  }
+
+  .btn-press:hover {
+    transform: scale(1.02);
+  }
+
+  /* Status-aware transitions */
+  .status-transition {
+    transition: color 500ms ease-out, background-color 500ms ease-out, border-color 500ms ease-out;
+  }
+
+  /* Contextual glow states */
+  .contextual-glow {
+    transition: box-shadow 200ms ease-out;
+  }
+
+  .contextual-glow:hover,
+  .contextual-glow:focus {
+    box-shadow: 0 0 4px rgba(0, 240, 255, 0.4);
+  }
+
+  /* Progressive revelation */
+  .progressive-reveal {
+    transition: height 300ms ease-out, opacity 300ms ease-out;
+  }
+
+  /* Spatial depth layering */
+  .depth-1 { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+  .depth-2 { box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); }
+  .depth-3 { box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); }
+  .depth-4 { box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); }
+
+  /* Cybersecurity specific shadows */
+  .cyber-shadow-sm { box-shadow: 0 4px 12px rgba(0, 240, 255, 0.1); }
+  .cyber-shadow-md { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); }
+  .cyber-shadow-lg { box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5); }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-pulse-data,
+    .animate-glow-cyan,
+    .animate-skeleton {
+      animation: none;
+    }
+    
+    .btn-press,
+    .status-transition,
+    .contextual-glow,
+    .progressive-reveal {
+      transition: none;
+    }
+  }
+}
