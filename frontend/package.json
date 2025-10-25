@@ -1,29 +1,48 @@
 {
-  "name": "soc-dashboard",
+  "name": "aegis-command",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+  "rocketCritical": {
+    "dependencies": [
+      "@dhiwise/component-tagger",
+      "react",
+      "react-dom",
+      "@reduxjs/toolkit",
+      "redux",
+      "react-router-dom"
+    ],
+    "devDependencies": [
+      "@vitejs/plugin-react",
+      "vite",
+      "vite-tsconfig-paths",
+      "tailwindcss",
+      "autoprefixer",
+      "postcss"
+    ],
+    "scripts": [
+      "start",
+      "build",
+      "serve"
+    ],
+    "warning": "🚨 CRITICAL: DO NOT REMOVE OR MODIFY ABOVE DEPENDENCIES - Required for app functionality"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@emotion/react": "^11.14.0",
+    "@mantine/core": "^8.3.1",
+    "@mantine/hooks": "^8.3.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.3",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^8.45.0",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.3",
-    "vite": "^4.4.5"
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/line-clamp": "^0.1.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "@vitejs/plugin-react": "4.3.4",
+    "autoprefixer": "10.4.2",
+    "postcss": "8.4.8",
+    "tailwindcss": "3.4.6",
+    "vite": "5.0.0",
+    "vite-tsconfig-paths": "3.6.0"
   }
 }
